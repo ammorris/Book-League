@@ -1,10 +1,33 @@
 {% extends "base.html" %}
 
 {% block content%}
-<h2>Sign Up</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="">Register</button>
-</form>
+
+<style>
+    .signup_form {
+        background-color: #ddd;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center; 
+        width: 500px; 
+        box-shadow: 1px 1px 20px black;
+    }
+    /* .signup_form button {
+        background-color: purple;
+    } */
+    form p {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<div class="signup_form">
+    <h2>Sign Up</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-primary" type="">Register</button>
+    </form>
+</div>
 {% endblock %}
