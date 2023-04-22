@@ -9,9 +9,72 @@ User = get_user_model()
 
 
 class UserSignupForm(UserCreationForm):
-    first_name = forms.CharField(max_length=30, required=True)
-    last_name = forms.CharField(max_length=30, required=True)
-    email = forms.EmailField(max_length=50, required=True)
+    username = forms.CharField(
+        label="",
+        max_length=30,
+        required=True,
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Username",
+                "class": "form-control",
+            }
+        ),
+    )
+    first_name = forms.CharField(
+        label="",
+        max_length=30,
+        required=True,
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "First name",
+                "class": "form-control",
+            }
+        ),
+    )
+    last_name = forms.CharField(
+        label="",
+        max_length=30,
+        required=True,
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Last name",
+                "class": "form-control",
+            }
+        ),
+    )
+    email = forms.EmailField(
+        label="",
+        max_length=50,
+        required=True,
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Email",
+                "class": "form-control",
+            }
+        ),
+    )
+    password1 = forms.CharField(
+        label="",
+        max_length=30,
+        required=True,
+        widget=forms.PasswordInput(
+            attrs={
+                "placeholder": "Password",
+                "class": "form-control",
+            }
+        ),
+    )
+    password2 = forms.CharField(
+        label="",
+        max_length=30,
+        required=True,
+        widget=forms.PasswordInput(
+            attrs={
+                "placeholder": "Repeat password",
+                "class": "form-control",
+            }
+        ),
+    )
 
     class Meta(UserCreationForm.Meta):
         model = User
