@@ -2,18 +2,20 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-  <div class="flex flex-column justify-content-center w-100">
-    <div class="col-6 mx-auto">
-      <div class="row m-3">
-        <input type="text" class="form-control rounded text-center shadow-sm" placeholder="Title" id="inputDefault">
+<form action="searchResults" method="get">
+  <div class="flex w-100">
+    <div class="row gap-3 justify-content-center">
+      <div class="col-md-6 col-sm-12">
+        <input type="text" class="form-control rounded text-center shadow-sm" placeholder="Title" name="title">
       </div>
-      <div class="row m-3">
-        <input type="text" class="form-control rounded text-center shadow-sm" placeholder="Author" id="inputDefault">
+      <div class="col-md-6 col-sm-12">
+        <input type="text" class="form-control rounded text-center shadow-sm" placeholder="Author" name="author">
       </div>
-      <div class="row m-3">
+      <div class="col-md-6 col-sm-12">
         <button class="form-control btn btn-info rounded shadow-sm">Search</button>
       </div>
     </div>
   </div>
+</form>
 {% endif %}
 {% endblock %}
