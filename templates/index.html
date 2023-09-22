@@ -2,13 +2,14 @@
 
 {% block content %}
 {% if user.is_authenticated %}
+<h2><a href="{% url 'addbook' %}">Start a discussion &rarr;</a></h2><br>
+<h2><a href='#'>This link will take you into the League</a></h2><br>
+<h2>Your Clubs</h2>
+<p>This one is a list of your own clubs</p><br>
 <h2>Your Favorite Books</h2>
 <p>Here would be a list of books</p><br>
 <h2>Popular Books</h2>
 <p>This is a list of popular books</p><br>
-<h2>Your Clubs</h2>
-<p>This one is a list of your own clubs</p><br>
-<h2><a href='#'>This link will take you into the League</a></h2><br>
 <p><a href="{% url 'logout' %}">Log Out</a></p>
 {% else %}
 <p>You are not logged in</p>

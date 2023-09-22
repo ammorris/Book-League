@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<form action="searchResults" method="get">
+  <div class="flex w-100">
+    <div class="row gap-3 justify-content-center">
+      <div class="col-md-6 col-sm-12">
+        <input type="text" class="form-control rounded text-center shadow-sm" placeholder="Title" name="title">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <input type="text" class="form-control rounded text-center shadow-sm" placeholder="Author" name="author">
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <button class="form-control btn btn-info rounded shadow-sm">Search</button>
+      </div>
+    </div>
+  </div>
+</form>
+{% endif %}
+{% endblock %}
